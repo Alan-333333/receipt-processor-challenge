@@ -1,9 +1,17 @@
-# Solution
-I provided an implementation in Go and used Docker to containerize the application. The main restapi implementation is located in `main.go`. Custom types are defined inside `models` package. The `utils` package contains functions to calculate point for a receipt and validate the format of a receipt.
+# Solution Overview
+This project implements a Receipt Processor API service using Go with Docker containerization. The implementation follows a modular architecture:
 
-I'm using the following versions for building and testing the application
+- `main.go`: Core REST API implementation with request handling, server setup, and concurrent data management
+- `models/`: Package containing data structures and type definitions for receipts and API responses
+- `utils/`: Package containing business logic for receipt validation and points calculation algorithms
 
-`Go: 1.22.4`
+## Technical Stack
+- Go version: 1.22.4 
+- Docker for containerization and deployment
+- Gorilla Mux for HTTP routing and request handling
+- Concurrent map access with sync.RWMutex
+- UUID generation for unique receipt IDs
+- Unit testing with Go's built-in testing framework
 
 ## How to run the app using Docker
 ### Build the Docker image
